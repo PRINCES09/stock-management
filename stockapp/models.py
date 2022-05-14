@@ -28,5 +28,18 @@ class Student(models.Model):
     def __str__(self):
         return f'{self.stuid}-{self.stuname}{self.cid}'
 
+class Book(models.Model):
+    bookid = models.IntegerField(primary_key=True)
+    bookname=models.CharField(max_length=30)
+    author=models.CharField(max_length=30)
+    bookcount=models.IntegerField()
+    recvdate=models.DateField()
+    source=models.CharField(max_length=30)
+
+    def __str__(self):
+        return f'{self.bookid}-{self.bookname}-{self.author} \
+                {self.bookcount}-{self.recvdate}-{self.source}'
+
+
 
 
